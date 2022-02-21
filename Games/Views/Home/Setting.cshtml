@@ -1,0 +1,82 @@
+﻿@using Microsoft.AspNet.Identity
+@using Games.Models;
+
+
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoff" }))
+    {
+        var db = new ApplicationDbContext();
+        var UserID = User.Identity.GetUserId();
+        var CurrentUser = db.Users.Where(a => a.Id == UserID).SingleOrDefault();
+        @Html.AntiForgeryToken()
+
+        <strong class="font-weight-bold h3">Hello: <span class="text-danger">@CurrentUser.UserName</span></strong> <span style="color: #777">(@CurrentUser.UserType)</span>
+
+        <ul class="nav navbar-nav mt-5 mb-5">
+
+
+            <ul class="info list-unstyled">
+                <li>
+                    <div class="navbar-user">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <p class="text-center">
+                                    <img src="~/Images/vectors/vec4.png" class="w-100 mb-5" />
+                                </p>
+                            </div>
+                            <div class="col-lg-7">
+
+                                @if (CurrentUser.UserType == "Publishers")
+                                {
+                                    <a href="~/Home/GetGamePublisher" class="btn btn-success btn-block">Games That You Added</a>
+                                    <a href="~/Games/Create" class="btn btn-info mt-3 btn-block">Add New Game</a>
+                                }
+                                else
+                                {
+                                    <a href="~/Home/GetGameByUser" class="btn btn-success btn-block mt-3">Games That You Comment On It</a>
+                                }
+                                <a href="~/Account/EditProfile" class="btn btn-secondary btn-block mt-3">Edit Your Account</a>
+
+                                <a href="javascript:document.getElementById('logoff').submit()" class="btn btn-danger btn-block mt-5">Log Out</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </ul>
+    }
+}
+
+else
+{
+    <h2>Setting</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <ul class="list-unstyled mt-5">
+                <li class="mb-3">
+                    <a href="~/Account/Login" class=" btn tn-outline btn-color w-50">
+                        <i class="icofont-user"></i>
+                        LogIn
+                    </a>
+                </li>
+
+                <li>
+                    <a href="~/Account/Register" class=" btn btn-dark w-50">
+                        <i class="icofont-lock"></i>
+                        Register
+                    </a>
+                </li>
+            </ul>
+
+
+        </div>
+        <div class="col-md-6">
+            <img src="~/Images/vectors/vec5.png" class="w-100" />
+        </div>
+    </div>
+
+}
+

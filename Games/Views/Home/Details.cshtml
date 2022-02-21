@@ -1,0 +1,58 @@
+﻿@model Games.Models.Game
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Game Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GameTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GameContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GameAppraisal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameAppraisal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GameImage)
+        </dt>
+
+        <dd>
+            <img src="~/Uploads/@Html.DisplayFor(model => model.GameImage)" class="img-thumbnail" style="width: 128px; height: 128px" />
+        </dd>
+
+    </dl>
+</div>
+<p class="mt-5">
+    @Html.ActionLink("Add Comment", "Buy", new { id = Model.Id }, new { @class = "btn btn-outline-success" }) |
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-outline-info" })
+</p>

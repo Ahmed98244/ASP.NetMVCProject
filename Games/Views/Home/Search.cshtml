@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Games.Models.Game>
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+    <h2 class="mb-5">Search Results</h2>
+    <div class="row games">
+
+        @foreach (var subItem in Model)
+        {
+            <div class="col-md-3 info">
+                <div class="card" style="width: 18rem;">
+                    <img src="~/Uploads/@subItem.GameImage" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(m => subItem.GameTitle)</h5>
+                        <p class="card-text">@Html.DisplayFor(m => subItem.GameContent)</p>
+                        @Html.ActionLink("Details", "Details", new { GameId = subItem.Id }, new { @class = "btn button" })
+
+                    </div>
+                </div>
+            </div>
+                }
+            </div>

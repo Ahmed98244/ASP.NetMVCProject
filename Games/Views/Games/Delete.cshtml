@@ -1,0 +1,64 @@
+﻿@model Games.Models.Game
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete </h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GameTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GameContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GameAppraisal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameAppraisal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GameImage)
+        </dt>
+
+        <dd>
+            <img src="~/Uploads/@Html.DisplayFor(model => model.GameImage)" class="img-thumbnail" style="width: 50px; height: 50px" />
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-outline-danger" /> |
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-outline-dark" })
+        </div>
+    }
+</div>

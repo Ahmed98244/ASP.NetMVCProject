@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    @*Navbar*@
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        @*fixed-top*@
+        <a class="navbar-brand" href="#">An<span class="brand">ime</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="~/Home/Index">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="~/Home/About">Our Blog</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                        Categories
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbardropdown">
+                        <a class="dropdown-item" href="~/Categories/Index">Categories</a>
+                        <a class="dropdown-item" href="~/Games/Index">Games</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="~/Account/Register">Sign Up</a>
+                        <a class="dropdown-item" href="~/Account/Login">Login</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="~/Home/Setting">Setting</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="~/Home/Contact">Contacts</a>
+                </li>
+
+            </ul>
+            @using (Html.BeginForm("Search", "Home", FormMethod.Post, new { @class = "form-inline my-2 my-lg-0" }))
+            {
+                <input class="form-control mr-sm-2" name="searchName" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-danger my-2 my-sm-0" name="searchName" type="submit">Search</button>
+            }
+
+        </div>
+    </nav>
+
+    @*Body*@
+    <div class="container body-content mt-5">
+
+        @RenderBody()
+
+
+    </div>
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer__top__logo">
+                            <a href="#"><img src="~/Images/logo.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer__top__social">
+                            <a href="#"><i class="icofont-facebook"></i></a>
+                            <a href="#"><i class="icofont-twitter"></i></a>
+                            <a href="#"><i class="icofont-dribbble"></i></a>
+                            <a href="#"><i class="icofont-instagram"></i></a>
+                            <a href="#"><i class="icofont-youtube-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__option">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="footer__option__item">
+                            <h5>About us</h5>
+                            <p>
+                                Formed in 2006 by Matt Hobbs and Cael Jones, Videoprah is an award-winning, full-service
+                                production company specializing.
+                            </p>
+                            <a href="#" class="read__more btn btn-color">Read more</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-3">
+                        <div class="footer__option__item">
+                            <h5>Who we are</h5>
+                            <ul>
+                                <li><a href="#">Team</a></li>
+                                <li><a href="#">Carrers</a></li>
+                                <li><a href="#">Contact us</a></li>
+                                <li><a href="#">Locations</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-3">
+                        <div class="footer__option__item">
+                            <h5>Our work</h5>
+                            <ul>
+                                <li><a href="#">Feature</a></li>
+                                <li><a href="#">Latest</a></li>
+                                <li><a href="#">Browse Archive</a></li>
+                                <li><a href="#">Video for web</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="footer__option__item">
+                            <h5>Newsletter</h5>
+                            <p>Videoprah is an award-winning, full-service production company specializing.</p>
+
+                        </div>
+                        <img src="~/Images/anime/review-1.jpg" class="img-thumbnail" />
+                        <img src="~/Images/anime/review-2.jpg" class="img-thumbnail" />
+                        <img src="~/Images/anime/review-3.jpg" class="img-thumbnail" /> <br />
+                        <img src="~/Images/anime/review-4.jpg" class="img-thumbnail mt-2" />
+                        <img src="~/Images/anime/review-5.jpg" class="img-thumbnail mt-2" />
+                        <img src="~/Images/anime/review-6.jpg" class="img-thumbnail mt-2" />
+                    </div>
+                </div>
+            </div>
+            <div class="footer__copyright">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p class="footer__copyright__text">
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script>
+                            All rights reserved | This template is made with <i class="icofont-heart"
+                                                                                aria-hidden="true"></i> by Ahmed
+                        </p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

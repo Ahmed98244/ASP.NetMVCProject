@@ -1,0 +1,43 @@
+﻿@model Games.Models.BuyTheGame
+
+@{
+    ViewBag.Title = "DetailsOfGame";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Game Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.game.GameTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.game.GameTitle)
+        </dd>
+
+
+        <dt>
+            The Message
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Messsage)
+        </dd>
+
+        <dt>
+            The Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-outline-info" }) |
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-outline-primary" })
+</p>

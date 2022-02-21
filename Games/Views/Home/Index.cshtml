@@ -1,0 +1,192 @@
+﻿@model IEnumerable<Games.Models.Category>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<!-- start landing -->
+<div class="landing">
+    <div class="overlay"></div>
+    <div class="text">
+        <div class="content">
+            <h2>Hellow World! <br> We Are Kasper We Make Art</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta aut possimus praesentium iste illum deleniti porro tenetur.</p>
+        </div>
+    </div>
+</div>
+<!-- end landing -->
+@*Start About Section*@
+<div class="features text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-lg-3">
+                <i class="icofont-home icofont-3x"></i>
+                <h3>Great Ideas</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis repellendus impedit animi. Earum.</p>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <i class="icofont-settings icofont-3x"></i>
+                <h3>Setting</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis repellendus impedit animi. Earum.</p>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <i class="icofont-unique-idea icofont-3x"></i>
+                <h3>Great Ideas</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis repellendus impedit animi. Earum.</p>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <i class="icofont-brand-designfloat icofont-3x"></i>
+                <h3>Great Designs</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis repellendus impedit animi. Earum.</p>
+            </div>
+        </div>
+    </div>
+</div>
+@*End About Section*@
+@*Start Featured Section*@
+<div class="featured-work text-center">
+    <div class="container">
+        <h2>Featured Work</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga tenetur obcaecati sunt qui aperiam consequuntur rerum, pariatur doloremque cum. Inventore, quaerat? Consequatur delectus quod incidunt doloribus tempore! Voluptate eos nobis at, non earum vero libero a, harum culpa error obcaecati.</p>
+        <ul class="list-unstyled row">
+            <li data-class="all" class="col-md active">All</li>
+            <li data-class=".websits" class="col-md">Websites</li>
+            <li data-class=".logo" class="col-md">Logos</li>
+            <li data-class=".graphice" class="col-md">Graphic</li>
+            <li data-class=".markiting" class="col-md">Marketing</li>
+        </ul>
+    </div>
+    <div class="shuffle-image">
+        <div class="row">
+            <div class="col-md">
+                <img class="websits w-100" src="~/Images/popular/popular-1.jpg" alt="">
+            </div>
+            <div class="col-md">
+                <img class="logo w-100" src="~/Images/popular/popular-2.jpg" alt="">
+            </div>
+            <div class="col-md">
+                <img class="logo w-100" src="~/Images/popular/popular-3.jpg" alt="">
+            </div>
+            <div class="col-md">
+                <img class="graphice w-100" src="~/Images/popular/popular-4.jpg" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                <img class="graphice w-100" src="~/Images/popular/popular-5.jpg" alt="">
+            </div>
+            <div class="col-md">
+                <img class="markiting w-100" src="~/Images/popular/popular-6.jpg" alt="">
+            </div>
+            <div class="col-md">
+                <img class="markiting w-100" src="~/Images/popular/recent-1.jpg" alt="">
+            </div>
+            <div class="col-md">
+                <img class="markiting w-100" src="~/Images/popular/recent-2.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+@*End Featured Section*@
+<!-- start about section  -->
+<div class="about">
+    <div class="container">
+        <div class="main-heading text-center">
+            <h2 class="main-header">About us</h2>
+            <p class="info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="text">
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis doloremque dolorum, ut dolor illo sed laboriosam veniam provident aliquid, ab earum. Nemo consequatur maiores eius, vitae numquam reprehenderit corrupti nam magni cumque sequi dolore facere ducimus omnis corporis velit! Fugit similique excepturi optio ipsum quia accusamus iusto assumenda magnam fuga.</p>
+            <button class="btn">Read More</button>
+        </div>
+        <div class="image">
+            <img src="~/Images/blog/blog-1.jpg" alt="">
+        </div>
+    </div>
+</div>
+<!-- end about section  -->
+<!-- start stats section  -->
+<div class="stats">
+    <div class="container">
+        <div class="box">
+            <i class="icofont-coffee-mug icofont-2x"></i>
+            <div class="number">1.200</div>
+            <p>Coffe Drinks</p>
+        </div>
+        <div class="box">
+            <i class="icofont-folder icofont-2x"></i>
+            <div class="number">156</div>
+            <p>Coffe Drinks</p>
+        </div>
+        <div class="box">
+            <i class="icofont-envelope icofont-2x"></i>
+            <div class="number">200</div>
+            <p>Coffe Drinks</p>
+        </div>
+        <div class="box">
+            <i class="icofont-trophy icofont-2x"></i>
+            <div class="number">100</div>
+            <p>Coffe Drinks</p>
+        </div>
+    </div>
+</div>
+<!-- end stats section  -->
+<h2 class="mt-5 bg-dark p-3 text-center main-header">All <span class="text-danger">Games</span>  <i class="text-right icofont-game text-danger"></i></h2> 
+
+@*Start Games Section*@
+<div class="games mb-5">
+    @foreach (var item in Model)
+    {
+        <div class="info text-left">
+            <h2 class="category bg-dark p-2">@Html.DisplayFor(m => item.CategoryName)</h2>
+            <h5 class="text">Description: (@Html.DisplayFor(m => item.CategoryDescription))</h5>
+        </div>
+
+        <div class="row">
+
+            @foreach (var subItem in item.Games)
+            {
+                <div class="col-md-3 info">
+                    <div class="card" style="width: 18rem;">
+                        <img src="~/Uploads/@subItem.GameImage" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">@Html.DisplayFor(m => subItem.GameTitle)</h5>
+                            <p class="card-text">@Html.DisplayFor(m => subItem.GameContent)</p>
+                            @Html.ActionLink("Details", "Details", new { GameId = subItem.Id }, new { @class = "btn button" })
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+
+</div>
+
+@*End Games Section*@
+@*Scripts*@
+@section scripts {
+    <script>
+        $(function () {
+            "use strict";
+            // featured work shuffle image
+            $(".featured-work ul li").on("click", function () {
+                $(this).addClass("active").siblings().removeClass("active");
+
+                if ($(this).data("class") === "all") {
+                    $(".shuffle-image .col-md").css("opacity", 1);
+                } else {
+                    $(".shuffle-image .col-md").css(
+                        "opacity",
+                        ".08",
+                        "background-color",
+                        "rgba(0,0,0,.5)"
+                    );
+                    $($(this).data("class")).parent().css("opacity", 1);
+                }
+            });
+        });
+    </script>
+}

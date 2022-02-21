@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Games.Models.GamesViewModel>
+
+@foreach (var gr in Model)
+{
+    <h3>@gr.GameTitle</h3>
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>
+                Name Of Reasercher
+            </th>
+            <th>
+                The Message
+            </th>
+            <th>
+                The Date
+            </th>
+        </tr>
+        @foreach (var item in gr.Items )
+        {
+            <tr>
+                <td>
+                    @item.user.UserName
+                </td>
+                <td>
+                    @item.Messsage
+                </td>
+                <td>
+                    @item.Date
+                </td>
+            </tr>
+        }
+    </table>
+}
